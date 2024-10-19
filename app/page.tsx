@@ -1,23 +1,24 @@
+import HomePage from "./ProdigyDcg/page"
+import { Member } from "./interfaceLIst"
 
 
-export default function Home() {
+export default async function Home() {
   const fetchData = async () => {
-    try{
-      const response = await fetch('http://localhost:3000/api/get-members')
+    try {
+      const response = await fetch('https://prodigy-dcg.vercel.app/api/get-members')
       const data = await response.json()
-      console.log("aaa")
-      console.log(data)
-    }catch (error) {
+      return data
+    } catch (error) {
       console.log(error)
     }
   }
 
-fetchData()
-
+  const data: Member[] = await fetchData()
+  console.log(data)
 
   return (
     <div>
-      STYFF
+      <HomePage members={data} />
     </div>
   );
 }
