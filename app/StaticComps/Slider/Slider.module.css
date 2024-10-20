@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   border: solid 2px red;
-  width: 80em;
+  width: 100%;
   overflow-x: hidden;
   position: relative;
 }
@@ -11,10 +11,12 @@
   position: absolute;
   left: 0;
   border: none;
-  font-size: 2em;
+  font-size: 5em;
   width: 1.5em;
   height: 2em;
   z-index: 1;
+  color: #e3ff42;
+  filter: drop-shadow(0 0 0.1em #e3ff42);
 }
 .slider__left:hover {
   cursor: pointer;
@@ -24,17 +26,19 @@
   position: absolute;
   right: 0;
   border: none;
-  font-size: 2em;
+  font-size: 5em;
   width: 1.5em;
   height: 2em;
   z-index: 1;
+  color: #e3ff42;
+  filter: drop-shadow(0 0 0.1em #e3ff42);
 }
 .slider__right:hover {
   cursor: pointer;
 }
 
 .slide {
-  min-width: 16em;
+  min-width: 20%;
 }
 .slide__left {
   animation: slide-left 250ms linear;

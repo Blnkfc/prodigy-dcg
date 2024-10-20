@@ -1,0 +1,44 @@
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #1a141c;
+  color: #d9c8de;
+}
+.profile__info {
+  display: flex;
+  width: 90%;
+  gap: 2em;
+  margin-bottom: 3em;
+}
+.profile__info__img {
+  border: solid 2px #e3ff42;
+  border-radius: 2em;
+  min-width: 50%;
+}
+.profile__info__description {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.profile__info__description a {
+  text-decoration: none;
+  color: #c53dff;
+  margin-bottom: 2em;
+  padding: 1em;
+  border: solid 1px #c53dff;
+  transition: all linear 150ms;
+  transition: background-color linear 150ms;
+}
+.profile__info__description a:hover {
+  background-color: #3e3044;
+  color: #e3ff42;
+  border-color: #e3ff42;
+  box-shadow: 0px 0px 5px 0px #e3ff42;
+}
+.profile__cast {
+  width: 90%;
+}/*# sourceMappingURL=ProdigyDcg.module.css.map */

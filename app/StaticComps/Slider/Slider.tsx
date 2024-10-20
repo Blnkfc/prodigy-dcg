@@ -57,7 +57,7 @@ const Slider = (props: { imgLinks: string[] }) => {
 
 
     return (
-        <div className={styles.slider}  >
+        <div className={styles.slider} id="prodigy-cast" >
             <button className={styles.slider__left} onClick={handleLeft}  >{`❬`}</button>
             {slideList}
             <button className={styles.slider__right} onClick={handleRight} >{`❭`}</button>

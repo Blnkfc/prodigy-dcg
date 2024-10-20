@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+
+.header {
+    background-color: $bg-color;
+    color: $text-white;
+    border-bottom: solid 2px $neon-purple;
+    margin-bottom: 2em;
+
+    -webkit-box-shadow: 0px 1px 10px 0px $neon-purple;
+    -moz-box-shadow: 0px 1px 10px 0px $neon-purple;
+    box-shadow: 0px 1px 10px 0px $neon-purple;
+}

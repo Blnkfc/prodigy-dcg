@@ -1,4 +1,6 @@
-$width: 80em;
+@import "../../variables.scss";
+
+$width: 100%;
 
 .slider {
     display: flex;
@@ -14,10 +16,12 @@ $width: 80em;
         position: absolute;
         left: 0;
         border: none;
-        font-size: 2em;
+        font-size: 5em;
         width: 1.5em;
         height: 2em;
         z-index: 1;
+        color: $neon-yellow;
+        filter:drop-shadow(0 0 0.1em $neon-yellow);
         &:hover{
             cursor: pointer;
         }
@@ -28,10 +32,12 @@ $width: 80em;
         position: absolute;
         right: 0;
         border: none;
-        font-size: 2em;
+        font-size: 5em;
         width: 1.5em;
         height: 2em;
         z-index: 1;
+        color: $neon-yellow;
+        filter:drop-shadow(0 0 0.1em $neon-yellow);
         &:hover{
             cursor: pointer;
         }
