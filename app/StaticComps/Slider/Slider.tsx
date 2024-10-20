@@ -1,16 +1,15 @@
 'use client'
 
-import { useRef, useState } from "react"
+import { useState } from "react"
 import styles from "./Slider.module.css"
 
 
 
-
 const Slider = (props: { imgLinks: string[] }) => {
-    const [centralSlide, setCentralSlide] = useState(2)
+    const centralSlide = 2
     const [animationClass, setAnimationClass] = useState('')
     
-
+    console.log(centralSlide)
     
     const slideList = props.imgLinks.map((s, index) =>
     {
@@ -18,7 +17,7 @@ const Slider = (props: { imgLinks: string[] }) => {
             (centralSlide == index)?styles.slide__central
             :((centralSlide == index+1) || (centralSlide == index-1))?styles.slide__inner
             :((centralSlide >= index+2) || (centralSlide <= index-2))?styles.slide__outer:"", animationClass].join(" ")
-        return <div 
+        return <div key={s}
         className={classString
         }>
             <img src={s} alt="" />

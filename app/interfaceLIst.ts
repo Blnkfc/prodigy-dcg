@@ -1,7 +1,7 @@
 export interface Member {
-    nickname: String,
+    nickname: string,
     birthday: Date,
-    telegram: String,
-    description: String,
-    thumbnail: String
+    telegram: string,
+    description: string,
+    thumbnail: string
 }

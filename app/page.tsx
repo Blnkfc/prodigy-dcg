@@ -1,4 +1,4 @@
-import HomePage from "./ProdigyDcg/page"
+import ProdigyDcg from "./ProdigyDcg/page"
 import { Member } from "./interfaceLIst"
 
 
@@ -18,7 +18,7 @@ export default async function Home() {
 
   return (
     <div>
-      <HomePage members={data} />
+      <ProdigyDcg members={data.members} />
     </div>
   );
 }
