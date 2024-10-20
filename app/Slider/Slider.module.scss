@@ -1,0 +1,123 @@
+$width: 80em;
+
+.slider {
+    display: flex;
+    align-items: center;
+    border: solid 2px red;
+    width: $width;
+    overflow-x: hidden;
+    position: relative;
+    
+
+    &__left {
+        background-color: transparent;
+        position: absolute;
+        left: 0;
+        border: none;
+        font-size: 2em;
+        width: 1.5em;
+        height: 2em;
+        z-index: 1;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &__right {
+        background-color: transparent;
+        position: absolute;
+        right: 0;
+        border: none;
+        font-size: 2em;
+        width: 1.5em;
+        height: 2em;
+        z-index: 1;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.slide {
+    min-width: calc($width/5);
+    &__left{
+        animation: slide-left 250ms linear ;
+    }
+    &__right{
+        animation: slide-right 250ms linear;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    &__central {
+        scale: 1;
+    }
+
+    &__inner {
+        scale: 0.9;
+        opacity: 0.5;
+    }
+
+    &__outer {
+        scale: 0.7;
+        opacity: 0.2;
+    }
+}
+
+
+
+@keyframes slide-left {
+    0% {
+        scale: 1;
+    }
+
+    49% {
+        transform: translateX(100%);
+    }
+
+    50% {
+        transform: translateX(0);
+        scale: 0;
+        opacity: 0;
+        display: none;
+    }
+    51%{
+        transform: translateX(-100%);
+        scale: 0;
+        opacity: 0;
+        display: block;
+    }
+
+    100% {
+        scale: 1
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        scale: 1;
+    }
+
+    49% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(0);
+        scale: 0;
+        opacity: 0;
+        display: none;
+    }
+    51%{
+        transform: translateX(100%);
+        scale: 0;
+        opacity: 0;
+        display: block;
+    }
+
+    100% {
+        scale: 1
+    }
+}

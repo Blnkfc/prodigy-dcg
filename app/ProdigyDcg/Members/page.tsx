@@ -1,8 +1,8 @@
-
+import "./members.module.css"
 
 const Members = () =>{
     return (
-        <div>
+        <div  >
             Members
         </div>
     )

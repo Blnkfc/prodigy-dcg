@@ -13,7 +13,7 @@ export default async function Home() {
     }
   }
 
-  const data: Member[] = await fetchData()
+  const data: {members:Member[]} = await fetchData()
   console.log(data)
 
   return (
