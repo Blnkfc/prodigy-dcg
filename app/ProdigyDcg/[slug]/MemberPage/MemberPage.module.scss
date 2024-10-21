@@ -1,0 +1,23 @@
+@import "../../../variables.scss";
+
+.memberPage{
+    display: flex;
+    gap: 4em;
+    color: $text-white;
+    img{
+        min-width: 50%;
+    }
+    &__info{
+        display: flex;
+        flex-flow: column wrap;
+        flex-grow: 1;
+
+        h1{
+            font-size: 3em;
+            margin-left: -0.3em;
+        }
+        a{
+            color: gray;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.memberPage {
+  display: flex;
+  gap: 4em;
+  color: #d9c8de;
+}
+.memberPage img {
+  min-width: 50%;
+}
+.memberPage__info {
+  display: flex;
+  flex-flow: column wrap;
+  flex-grow: 1;
+}
+.memberPage__info h1 {
+  font-size: 3em;
+  margin-left: -0.3em;
+}
+.memberPage__info a {
+  color: gray;
+}/*# sourceMappingURL=MemberPage.module.css.map */

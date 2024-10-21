@@ -3,10 +3,10 @@ import MemberPage from "./MemberPage/MemberPage"
 import { Member } from "@/app/interfaceLIst"
 
 
-async function Members({ params }: { params: { MembersNickName: string } }) {
+async function Members({ params }: { params: { slug: string } }) {
     const fetchData = async () => {
         try {
-            const response = await fetch(`https://prodigy-dcg.vercel.app/api/get-members/?nickName=${params.MembersNickName}`, {
+            const response = await fetch(`https://prodigy-dcg.vercel.app/api/get-members/?nickName=${params.slug}`, {
                 next: {
                     revalidate: 3600
                 }
@@ -18,14 +18,13 @@ async function Members({ params }: { params: { MembersNickName: string } }) {
         }
     }
 
-    const data: { member: Member } = await fetchData()
+    const data: { member: Member[] } = await fetchData()
 
-    console.log(`MEMBER DATA: ${JSON.stringify(data)}`)
+    //console.log(params)
 
     return (
         <div  >
             <MemberPage memberData={data.member} />
-            {params.MembersNickName}
         </div>
     )
 }

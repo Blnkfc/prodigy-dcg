@@ -5,10 +5,18 @@ $width: 100%;
 .slider {
     display: flex;
     align-items: center;
-    border: solid 2px red;
+    background-color: lighten($color: $bg-darker, $amount: 5);
+    background-image: url('https://i.imgur.com/lMKVgxy.png');
+    background-position: bottom left;
+    border: solid 2px $neon-purple;
     width: $width;
     overflow-x: hidden;
     position: relative;
+    border-radius: 1em;
+    padding: 1em;
+    &:hover{
+        animation: bgMove 15s linear infinite;
+    }
     
 
     &__left {
@@ -55,19 +63,25 @@ $width: 100%;
 
     img {
         width: 100%;
+        border-radius: 1em;
     }
 
     &__central {
-        scale: 1;
+        scale: 0.95;
+        transition: scale ease-in 50ms;
+        &:hover{
+            scale: 1;
+            animation: load 1s ease-out infinite;
+        }
     }
 
     &__inner {
-        scale: 0.9;
+        scale: 0.8;
         opacity: 0.5;
     }
 
     &__outer {
-        scale: 0.7;
+        scale: 0.6;
         opacity: 0.2;
     }
 }
@@ -125,5 +139,26 @@ $width: 100%;
 
     100% {
         scale: 1
+    }
+}
+
+@keyframes load {
+    0% {
+        filter: drop-shadow(0 0 0.5em $neon-yellow);
+   }
+    50% {
+        filter: drop-shadow(0 0 1em $neon-yellow);
+   }
+    100% {
+        filter: drop-shadow(0 0 0.5em $neon-yellow);
+   }
+}
+
+@keyframes bgMove {
+    0%{
+        background-position: bottom left;
+    }
+    100%{
+        background-position: top right;
     }
 }

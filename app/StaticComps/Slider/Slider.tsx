@@ -1,31 +1,38 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "./Slider.module.css"
+import { Slide } from "@/app/interfaceLIst"
+import Link from "next/link"
 
+interface SliderProps{
+    slideList: Slide[]
+}
 
-
-const Slider = (props: { imgLinks: string[] }) => {
+const Slider = (props: SliderProps) => {
     const centralSlide = 2
     const [animationClass, setAnimationClass] = useState('')
+    console.log(props.slideList)
     
-    console.log(centralSlide)
+   
     
-    const slideList = props.imgLinks.map((s, index) =>
+    const slides = props.slideList.map((s: Slide, index: number) =>
     {
         const classString = [styles.slide,
             (centralSlide == index)?styles.slide__central
             :((centralSlide == index+1) || (centralSlide == index-1))?styles.slide__inner
             :((centralSlide >= index+2) || (centralSlide <= index-2))?styles.slide__outer:"", animationClass].join(" ")
-        return <div key={s}
+        return <div key={s.nickName}
         className={classString
         }>
-            <img src={s} alt="" />
+            <Link href={`/ProdigyDcg/${s.nickName}`} >
+            <img src={s.thumbnail} alt="" />
+            </Link>
         </div>}
         
     )
 
-    const shiftRight = (array: string[]) => {
+    const shiftRight = (array: Slide[]) => {
         console.log(`start: ${array}`)
         const lastElemIndex = array.length - 1
         const lastElem = array[lastElemIndex]
@@ -33,7 +40,7 @@ const Slider = (props: { imgLinks: string[] }) => {
         array.unshift(lastElem)
         console.log(`end: ${array}`)
     }
-    const shiftLeft = (array: string[]) => {
+    const shiftLeft = (array: Slide[]) => {
         console.log(`start: ${array}`)
         const firstElem = array.shift()
         if(firstElem !== undefined)
@@ -45,12 +52,12 @@ const Slider = (props: { imgLinks: string[] }) => {
     const handleLeft = () => {
         setAnimationClass(styles.slide__left)
         setTimeout(() => {setAnimationClass('')}, 250)
-        shiftRight(props.imgLinks)
+        shiftRight(props.slideList)
     }
 
     const handleRight = () => {
         setAnimationClass(styles.slide__right)
-        shiftLeft(props.imgLinks)
+        shiftLeft(props.slideList)
         setTimeout(() => {setAnimationClass('')}, 250)
         
     }
@@ -59,7 +66,7 @@ const Slider = (props: { imgLinks: string[] }) => {
     return (
         <div className={styles.slider} id="prodigy-cast" >
             <button className={styles.slider__left} onClick={handleLeft}  >{`❬`}</button>
-            {slideList}
+            {slides}
             <button className={styles.slider__right} onClick={handleRight} >{`❭`}</button>
         </div>
     )

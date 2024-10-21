@@ -18,6 +18,10 @@
             border: solid 2px $neon-yellow;
             border-radius: 2em;
             min-width: 50%;
+            overflow: hidden;
+            img{
+                width: 100% ;
+            }
         }
 
         &__description {
@@ -26,29 +30,106 @@
             justify-content: space-between;
             align-items: center;
             flex-grow: 1;
+            position: relative;
 
-            a {
-                text-decoration: none;
-                color: $neon-purple;
-                margin-bottom: 2em;
-                padding: 1em;
-                border: solid 1px $neon-purple;
-                transition: all linear 150ms;
-                transition: background-color linear 150ms;
+            &__buttons {
+                display: flex;
+                gap: 2em;
 
-                &:hover {
-                    background-color: lighten($color: $bg-color, $amount: 10);
-                    color: $neon-yellow;
-                    border-color: $neon-yellow;
-                    -webkit-box-shadow: 0px 0px 5px 0px $neon-yellow;
-                    -moz-box-shadow: 0px 0px 5px 0px $neon-yellow;
-                    box-shadow: 0px 0px 5px 0px $neon-yellow;
+                a {
+                    text-decoration: none;
+                    color: $neon-purple;
+                    margin-bottom: 2em;
+                    padding: 1em;
+                    border: solid 1px $neon-purple;
+                    transition: all linear 150ms;
+                    transition: background-color linear 150ms;
+
+                    .button__arrow {
+                        color: $neon-purple;
+                        pointer-events: none;
+                        position: absolute;
+                        opacity: 15%;
+                        font-size: 8em;
+                        transform: translateY(-100%) translateX(-200%);
+
+                        &::before {
+                            content: "➘";
+                            position: absolute;
+                            font-size: 3em;
+                            color: $neon-purple;
+                            transform: translateY(-70%) translateX(-20%) rotate(30deg);
+                            pointer-events: none;
+                            transition: color ease-in 75ms 150ms;
+                        }
+
+                        &::after {
+                            content: "➘";
+                            position: absolute;
+                            font-size: 2em;
+                            color: $neon-purple;
+                            transform: translateY(-40%) translateX(30%) rotate(70deg);
+                            pointer-events: none;
+                            transition: color ease-in 75ms 75ms;
+                        }
+                    }
+
                 }
-            }
 
+                &__cast{
+                    .button__arrow{
+                        transform: translateY(-100%) translateX(-100%) !important;
+                    }
+                    &:hover {
+                        background-color: lighten($color: $bg-color, $amount: 10);
+                        color: $neon-yellow;
+                        border-color: $neon-yellow;
+                        -webkit-box-shadow: 0px 0px 5px 0px $neon-yellow;
+                        -moz-box-shadow: 0px 0px 5px 0px $neon-yellow;
+                        box-shadow: 0px 0px 5px 0px $neon-yellow;
+
+                        .button__arrow {
+                            color: $neon-yellow;
+                            z-index: 99;
+                            &::after,
+                            &::before {
+                                color: $neon-yellow;
+                            }
+                        }
+                    }
+                }
+
+                &__covers {
+                    border: solid 1px $youtube-red !important;
+                    color: $youtube-red !important ;
+
+                    .button__arrow{
+                        transform: translateY(-100%) translateX(-290%) !important;
+                    }
+
+                    &:hover {
+                        background-color: $youtube-red;
+                        color: $text-white !important ;
+                        border-color: $text-white !important ;
+                        -webkit-box-shadow: 0px 0px 5px 0px $youtube-red;
+                        -moz-box-shadow: 0px 0px 5px 0px $youtube-red;
+                        box-shadow: 0px 0px 5px 0px $youtube-red;
+                        .button__arrow {
+                            color: $youtube-red;
+                            z-index: 99;
+                            &::after,
+                            &::before {
+                                color: $youtube-red;
+                            }
+                        }
+                    }
+                }
+
+            }
         }
     }
-    &__cast{
+
+    &__cast {
         width: 90%;
     }
 }

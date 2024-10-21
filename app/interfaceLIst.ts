@@ -5,3 +5,8 @@ export interface Member {
     description: string,
     thumbnail: string
 }
+
+export interface Slide {
+    nickName: string;
+    thumbnail: string;
+}

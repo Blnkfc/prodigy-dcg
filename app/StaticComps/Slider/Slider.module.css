@@ -1,10 +1,18 @@
 .slider {
   display: flex;
   align-items: center;
-  border: solid 2px red;
+  background-color: #281f2b;
+  background-image: url("https://i.imgur.com/lMKVgxy.png");
+  background-position: bottom left;
+  border: solid 2px #c53dff;
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  border-radius: 1em;
+  padding: 1em;
+}
+.slider:hover {
+  animation: bgMove 15s linear infinite;
 }
 .slider__left {
   background-color: transparent;
@@ -48,16 +56,22 @@
 }
 .slide img {
   width: 100%;
+  border-radius: 1em;
 }
 .slide__central {
+  scale: 0.95;
+  transition: scale ease-in 50ms;
+}
+.slide__central:hover {
   scale: 1;
+  animation: load 1s ease-out infinite;
 }
 .slide__inner {
-  scale: 0.9;
+  scale: 0.8;
   opacity: 0.5;
 }
 .slide__outer {
-  scale: 0.7;
+  scale: 0.6;
   opacity: 0.2;
 }
 
@@ -105,5 +119,24 @@
   }
   100% {
     scale: 1;
+  }
+}
+@keyframes load {
+  0% {
+    filter: drop-shadow(0 0 0.5em #e3ff42);
+  }
+  50% {
+    filter: drop-shadow(0 0 1em #e3ff42);
+  }
+  100% {
+    filter: drop-shadow(0 0 0.5em #e3ff42);
+  }
+}
+@keyframes bgMove {
+  0% {
+    background-position: bottom left;
+  }
+  100% {
+    background-position: top right;
   }
 }/*# sourceMappingURL=Slider.module.css.map */

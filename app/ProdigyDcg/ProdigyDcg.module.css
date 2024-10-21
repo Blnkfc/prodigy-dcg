@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .profile {
   display: flex;
   align-items: center;
@@ -16,6 +17,10 @@
   border: solid 2px #e3ff42;
   border-radius: 2em;
   min-width: 50%;
+  overflow: hidden;
+}
+.profile__info__img img {
+  width: 100%;
 }
 .profile__info__description {
   display: flex;
@@ -23,8 +28,13 @@
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
+  position: relative;
 }
-.profile__info__description a {
+.profile__info__description__buttons {
+  display: flex;
+  gap: 2em;
+}
+.profile__info__description__buttons a {
   text-decoration: none;
   color: #c53dff;
   margin-bottom: 2em;
@@ -33,11 +43,67 @@
   transition: all linear 150ms;
   transition: background-color linear 150ms;
 }
-.profile__info__description a:hover {
+.profile__info__description__buttons a .button__arrow {
+  color: #c53dff;
+  pointer-events: none;
+  position: absolute;
+  opacity: 15%;
+  font-size: 8em;
+  transform: translateY(-100%) translateX(-200%);
+}
+.profile__info__description__buttons a .button__arrow::before {
+  content: "➘";
+  position: absolute;
+  font-size: 3em;
+  color: #c53dff;
+  transform: translateY(-70%) translateX(-20%) rotate(30deg);
+  pointer-events: none;
+  transition: color ease-in 75ms 150ms;
+}
+.profile__info__description__buttons a .button__arrow::after {
+  content: "➘";
+  position: absolute;
+  font-size: 2em;
+  color: #c53dff;
+  transform: translateY(-40%) translateX(30%) rotate(70deg);
+  pointer-events: none;
+  transition: color ease-in 75ms 75ms;
+}
+.profile__info__description__buttons__cast .button__arrow {
+  transform: translateY(-100%) translateX(-100%) !important;
+}
+.profile__info__description__buttons__cast:hover {
   background-color: #3e3044;
   color: #e3ff42;
   border-color: #e3ff42;
   box-shadow: 0px 0px 5px 0px #e3ff42;
+}
+.profile__info__description__buttons__cast:hover .button__arrow {
+  color: #e3ff42;
+  z-index: 99;
+}
+.profile__info__description__buttons__cast:hover .button__arrow::after, .profile__info__description__buttons__cast:hover .button__arrow::before {
+  color: #e3ff42;
+}
+.profile__info__description__buttons__covers {
+  border: solid 1px #de2c4d !important;
+  color: #de2c4d !important;
+}
+.profile__info__description__buttons__covers .button__arrow {
+  transform: translateY(-100%) translateX(-290%) !important;
+}
+.profile__info__description__buttons__covers:hover {
+  background-color: #de2c4d;
+  color: #d9c8de !important;
+  border-color: #d9c8de !important;
+  box-shadow: 0px 0px 5px 0px #de2c4d;
+}
+.profile__info__description__buttons__covers:hover .button__arrow {
+  color: #de2c4d;
+  z-index: 99;
+}
+.profile__info__description__buttons__covers:hover .button__arrow::after, .profile__info__description__buttons__covers:hover .button__arrow::before {
+  color: #de2c4d;
 }
 .profile__cast {
   width: 90%;
