@@ -1,9 +1,21 @@
+'use client'
+
+import { Member } from "@/app/interfaceLIst"
+
+interface MemberPageProps{
+    memberData: Member
+}
 
 
-const MemberPage = () => {
+const MemberPage = ({memberData}:MemberPageProps) => {
     return(
         <>
-        aaa
+        <div>
+            {memberData.nickname}
+        </div>
+        <div>
+            {memberData.description}
+        </div>
         </>
     )
 }

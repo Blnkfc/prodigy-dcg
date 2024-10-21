@@ -16,7 +16,6 @@ export default async function Home() {
   }
 
   const data: {members:Member[]} = await fetchData()
-  console.log(data)
 
   return (
     <div>

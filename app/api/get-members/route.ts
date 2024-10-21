@@ -1,7 +1,6 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 import { unstable_noStore as noStore } from 'next/cache';
-import { error } from 'console';
 
 
 export async function GET(request: Request) {
