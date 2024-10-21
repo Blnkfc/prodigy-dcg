@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import styles from "./Slider.module.css"
 import { Slide } from "@/app/interfaceLIst"
 import Link from "next/link"
