@@ -1,3 +1,13 @@
+@keyframes appear-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,7 +15,8 @@
   color: #d9c8de;
   border-bottom: solid 2px #c53dff;
   margin-bottom: 2em;
-  box-shadow: 0px 1px 10px 0px #c53dff;
+  box-shadow: 0px 1px 20px 0px #c53dff;
+  animation: appear-from-top ease-in 500ms;
 }
 .header a {
   display: block;

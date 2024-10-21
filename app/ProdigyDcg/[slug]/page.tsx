@@ -20,7 +20,6 @@ async function Members({ params }: { params: { slug: string } }) {
 
     const data: { member: Member[] } = await fetchData()
 
-    //console.log(params)
 
     return (
         <div  >

@@ -8,10 +8,11 @@
     color: $text-white;
     border-bottom: solid 2px $neon-purple;
     margin-bottom: 2em;
+    -webkit-box-shadow: 0px 1px 20px 0px $neon-purple;
+    -moz-box-shadow: 0px 1px 20px 0px $neon-purple;
+    box-shadow: 0px 1px 20px 0px $neon-purple;
+    animation: appear-from-top ease-in 500ms;
 
-    -webkit-box-shadow: 0px 1px 10px 0px $neon-purple;
-    -moz-box-shadow: 0px 1px 10px 0px $neon-purple;
-    box-shadow: 0px 1px 10px 0px $neon-purple;
     a{
         display: block;
         width: 5em;
@@ -20,3 +21,5 @@
         background-size: cover;
     }
 }
+
+

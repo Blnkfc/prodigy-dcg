@@ -14,9 +14,7 @@ $width: 100%;
     position: relative;
     border-radius: 1em;
     padding: 1em;
-    &:hover{
-        animation: bgMove 15s linear infinite;
-    }
+    animation: bgMove 15s linear infinite;
     
 
     &__left {

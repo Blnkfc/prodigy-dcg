@@ -32,7 +32,7 @@ const ProdigyDcg = ({ members }: ProdigyDcgProps) => {
             <section className={styles.profile__info} >
                 <div className={styles.profile__info__img}>
                     <img  src="https://i.imgur.com/yLYjhOM.jpeg" alt="https://i.imgur.com/yLYjhOM.jpeg" />
-
+                    <p>Шо по разбору?</p>
                 </div>
                 <div className={styles.profile__info__description}  >
                     <span>

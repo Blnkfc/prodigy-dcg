@@ -4,3 +4,56 @@ $text-white: #d9c8de;
 $neon-purple: #c53dff;
 $neon-yellow: #e3ff42;
 $youtube-red: #de2c4d;
+
+
+@keyframes appear-from-top {
+    0%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+@keyframes appear-from-bottom {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear-from-left {
+    0%{
+        opacity: 0;
+        transform: translateX(-3em);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateX(0);
+    }
+}
+@keyframes appear-from-right {
+    0%{
+        opacity: 0;
+        transform: translateX(3em);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes unfold-from-top {
+    from{
+        opacity: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        opacity: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}

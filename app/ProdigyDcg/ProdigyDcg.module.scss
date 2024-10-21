@@ -15,13 +15,33 @@
         margin-bottom: 3em;
 
         &__img {
+            position: relative;
             border: solid 2px $neon-yellow;
             border-radius: 2em;
             min-width: 50%;
             overflow: hidden;
-            img{
-                width: 100% ;
+            animation: appear-from-left linear 200ms 200ms;
+
+            &:hover{
+                p{
+                    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+                }
             }
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            p{
+                background-color: $bg-color;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+                transition: all ease-in 2s;
+            }
+
         }
 
         &__description {
@@ -30,7 +50,11 @@
             justify-content: space-between;
             align-items: center;
             flex-grow: 1;
+            opacity: 0;
             position: relative;
+            transform: translateX(0);
+            animation-fill-mode: forwards !important;
+            animation: appear-from-right ease-out 200ms 500ms;
 
             &__buttons {
                 display: flex;
@@ -77,6 +101,10 @@
                 }
 
                 &__cast{
+                    opacity: 0;
+                    animation-fill-mode: forwards !important;
+                    animation: appear-from-bottom linear 150ms 700ms;
+
                     .button__arrow{
                         transform: translateY(-100%) translateX(-100%) !important;
                     }
@@ -102,6 +130,9 @@
                 &__covers {
                     border: solid 1px $youtube-red !important;
                     color: $youtube-red !important ;
+                    opacity: 0;
+                    animation-fill-mode: forwards !important;
+                    animation: appear-from-bottom linear 150ms 800ms;
 
                     .button__arrow{
                         transform: translateY(-100%) translateX(-290%) !important;

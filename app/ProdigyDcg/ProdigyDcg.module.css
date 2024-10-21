@@ -1,4 +1,56 @@
 @charset "UTF-8";
+@keyframes appear-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+@keyframes appear-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+@keyframes appear-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-3em);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+@keyframes appear-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(3em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes unfold-from-top {
+  from {
+    opacity: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    opacity: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
 .profile {
   display: flex;
   align-items: center;
@@ -14,13 +66,30 @@
   margin-bottom: 3em;
 }
 .profile__info__img {
+  position: relative;
   border: solid 2px #e3ff42;
   border-radius: 2em;
   min-width: 50%;
   overflow: hidden;
+  animation: appear-from-left linear 200ms 200ms;
+}
+.profile__info__img:hover p {
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+          clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
 .profile__info__img img {
   width: 100%;
+  height: 100%;
+}
+.profile__info__img p {
+  background-color: #231b26;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+          clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  transition: all ease-in 2s;
 }
 .profile__info__description {
   display: flex;
@@ -28,7 +97,11 @@
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
+  opacity: 0;
   position: relative;
+  transform: translateX(0);
+  animation-fill-mode: forwards !important;
+  animation: appear-from-right ease-out 200ms 500ms;
 }
 .profile__info__description__buttons {
   display: flex;
@@ -69,6 +142,11 @@
   pointer-events: none;
   transition: color ease-in 75ms 75ms;
 }
+.profile__info__description__buttons__cast {
+  opacity: 0;
+  animation-fill-mode: forwards !important;
+  animation: appear-from-bottom linear 150ms 700ms;
+}
 .profile__info__description__buttons__cast .button__arrow {
   transform: translateY(-100%) translateX(-100%) !important;
 }
@@ -88,6 +166,9 @@
 .profile__info__description__buttons__covers {
   border: solid 1px #de2c4d !important;
   color: #de2c4d !important;
+  opacity: 0;
+  animation-fill-mode: forwards !important;
+  animation: appear-from-bottom linear 150ms 800ms;
 }
 .profile__info__description__buttons__covers .button__arrow {
   transform: translateY(-100%) translateX(-290%) !important;
