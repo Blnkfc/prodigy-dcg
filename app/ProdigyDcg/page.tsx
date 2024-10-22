@@ -31,7 +31,7 @@ const ProdigyDcg = ({ members }: ProdigyDcgProps) => {
         <div className={styles.profile} >
             <section className={styles.profile__info} >
                 <div className={styles.profile__info__img}>
-                    <img  src="https://i.imgur.com/yLYjhOM.jpeg" alt="https://i.imgur.com/yLYjhOM.jpeg" />
+                    <img src="https://i.imgur.com/yLYjhOM.jpeg" alt="https://i.imgur.com/yLYjhOM.jpeg" />
                     <p>Шо по разбору?</p>
                 </div>
                 <div className={styles.profile__info__description}  >
@@ -57,6 +57,11 @@ const ProdigyDcg = ({ members }: ProdigyDcgProps) => {
                     </div>
                 </div>
             </section>
+            <div className={styles.profile__separator} >
+                <div className={styles.profile__separator__wrapper} >
+                    <span>❯</span>
+                </div>
+            </div>
             <section className={styles.profile__cast} >
                 <Slider slideList={slideList} />
             </section>

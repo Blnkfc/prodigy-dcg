@@ -54,9 +54,27 @@
   display: flex;
   gap: 4em;
   color: #d9c8de;
+  padding-bottom: 5em;
+  justify-content: center;
 }
-.memberPage img {
-  width: 30%;
+.memberPage__img {
+  position: relative;
+  width: 40%;
+}
+.memberPage__img img {
+  width: 80%;
+  border-radius: 1em;
+  height: 100%;
+}
+.memberPage__img::after {
+  position: absolute;
+  content: " ";
+  width: 80%;
+  height: 100%;
+  background-color: #c53dff;
+  transform: translateX(-100%);
+  opacity: 0.15;
+  border-radius: 1em;
 }
 .memberPage__info {
   display: flex;
@@ -69,4 +87,15 @@
 }
 .memberPage__info a {
   color: gray;
+}
+.memberPage__background {
+  width: 100%;
+  height: 100dvh;
+  line-height: 2em;
+  text-align: center;
+  position: fixed;
+  font-size: 20em;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
 }/*# sourceMappingURL=MemberPage.module.css.map */

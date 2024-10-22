@@ -16,7 +16,10 @@ const MemberPage = ({ memberData }: MemberPageProps) => {
     return (
         <>
             <section className={styles.memberPage} >
-                <img src={memberData[0].thumbnail} alt={memberData[0].thumbnail} />
+                <p className={styles.memberPage__background} >{memberData[0].nickname}</p>
+                <div className={styles.memberPage__img}  >
+                    <img src={memberData[0].thumbnail} alt={memberData[0].thumbnail} />
+                </div>
                 <div className={styles.memberPage__info} >
                     <h1> {memberData[0].nickname} </h1>
                     <h3> {birthday.toDateString()} </h3>
