@@ -2,43 +2,49 @@
 
 .memberPage{
     display: flex;
-    gap: 4em;
     color: $text-white;
     padding-bottom: 5em;
     justify-content: center;
+    margin: 0 5% 0 5%;
     
-
-    &__img{
-        position: relative;
-        width: 40%;
-        img{
-            width: 80%;
-            border-radius: 1em;
-            height: 100%;
-    
-        }
-        &::after{
-            position: absolute;
-            content: " ";
-            width: 80%;
-            height: 100%;
-            background-color: $neon-purple;
-            transform: translateX(-100%);
-            opacity: 0.15;
-            border-radius: 1em;
-        }
-    }
     &__info{
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: row wrap;
         flex-grow: 1;
+        padding: 1em;
+        border-radius: 1em;
+        
 
-        h1{
-            font-size: 3em;
-            margin-left: -0.3em;
+        &__img{
+            position: relative;
+            width: 40%;
+            img{
+                width: 80%;
+                border-radius: 1em;
+                height: 100%;
+        
+            }
+            &::after{
+                position: absolute;
+                content: " ";
+                width: 80%;
+                height: 100%;
+                background-color: $neon-purple;
+                transform: translateX(-100%);
+                opacity: 0.15;
+                border-radius: 1em;
+            }
         }
-        a{
-            color: gray;
+
+        legend{
+            font-size: 3em;
+        }
+        &__description{
+            display: flex;
+            flex-flow: column wrap;
+            a{
+                color: gray;
+            }
         }
     }
     &__background{

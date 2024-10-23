@@ -52,21 +52,28 @@
 }
 .memberPage {
   display: flex;
-  gap: 4em;
   color: #d9c8de;
   padding-bottom: 5em;
   justify-content: center;
+  margin: 0 5% 0 5%;
 }
-.memberPage__img {
+.memberPage__info {
+  display: flex;
+  flex-flow: row wrap;
+  flex-grow: 1;
+  padding: 1em;
+  border-radius: 1em;
+}
+.memberPage__info__img {
   position: relative;
   width: 40%;
 }
-.memberPage__img img {
+.memberPage__info__img img {
   width: 80%;
   border-radius: 1em;
   height: 100%;
 }
-.memberPage__img::after {
+.memberPage__info__img::after {
   position: absolute;
   content: " ";
   width: 80%;
@@ -76,16 +83,14 @@
   opacity: 0.15;
   border-radius: 1em;
 }
-.memberPage__info {
+.memberPage__info legend {
+  font-size: 3em;
+}
+.memberPage__info__description {
   display: flex;
   flex-flow: column wrap;
-  flex-grow: 1;
 }
-.memberPage__info h1 {
-  font-size: 3em;
-  margin-left: -0.3em;
-}
-.memberPage__info a {
+.memberPage__info__description a {
   color: gray;
 }
 .memberPage__background {

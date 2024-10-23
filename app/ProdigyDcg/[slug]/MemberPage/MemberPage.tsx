@@ -17,18 +17,22 @@ const MemberPage = ({ memberData }: MemberPageProps) => {
         <>
             <section className={styles.memberPage} >
                 <p className={styles.memberPage__background} >{memberData[0].nickname}</p>
-                <div className={styles.memberPage__img}  >
-                    <img src={memberData[0].thumbnail} alt={memberData[0].thumbnail} />
-                </div>
-                <div className={styles.memberPage__info} >
-                    <h1> {memberData[0].nickname} </h1>
-                    <h3> {birthday.toDateString()} </h3>
-                    <a href={memberData[0].telegram}>{memberData[0].telegram}</a>
-                    <p>{memberData[0].description}</p>
-                </div>
+
+                <fieldset className={styles.memberPage__info} style={{background: 'rgba(52, 235, 183, 0.5)'}} >
+                    <legend> {memberData[0].nickname} </legend>
+                    <div className={styles.memberPage__info__img}  >
+                        <img src={memberData[0].thumbnail} alt={memberData[0].thumbnail} />
+                    </div>
+                    <div className={styles.memberPage__info__description} >
+                        <h3> {birthday.toDateString()} </h3>
+                        <a href={memberData[0].telegram}>{memberData[0].telegram}</a>
+                        <p>{memberData[0].description}</p>
+                    </div>
+                </fieldset>
             </section>
         </>
     )
 }
 
 export default MemberPage
+
